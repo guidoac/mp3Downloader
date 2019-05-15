@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 import React from 'react';
 
-export const NavBar = styled.View`
+const NavBar = styled.View`
   background-color: #dbdbdb;
   height: 40px;
   top: 50px;
