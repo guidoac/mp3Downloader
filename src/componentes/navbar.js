@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import React from 'react';
+import icons from 'react-native-vector-icons';
 
 const NavBar = styled.View`
   background-color: #dbdbdb;
@@ -8,11 +9,19 @@ const NavBar = styled.View`
   flex-direction: row;
 `
 
+const LogoYT = styled.Image`
+  height:40px;
+  width: 30%;
+  margin: 5px;
+  position: absolute;
+  align-self:center;
+`
+
 const InputURL = styled.TextInput`
   background-color: #DADADA;
   width: 75%;
   margin: 0px 0px 0px 5px;
-  border: 1px solid black;
+  border: 1px solid #306d34;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 `
@@ -25,13 +34,30 @@ const ButtonPesquisar = styled.TouchableOpacity`
   margin-right: 5px;
 `
 
-export default class Nav extends React.Component {
+const ButtonDownloadPL = styled.TouchableOpacity`
+  height: 40px;
+  background-color: #306d34;
+  top:50px;
+  margin: 5px;
+  border-radius: 5px;
+`
+
+export default class NavBarContainer extends React.Component {
   render() {
     return (
-      <NavBar>
-        <InputURL />
-        <ButtonPesquisar></ButtonPesquisar>
-      </NavBar>
-    )
+      <>
+        <LogoYT
+          source={require("../recursos/logoyt.png")}
+        />
+        <NavBar>
+          <InputURL 
+          placeholder="Digite a URL aqui"
+          placeholderTextColor="black"
+          />
+          <ButtonPesquisar></ButtonPesquisar>
+        </NavBar>
+        <ButtonDownloadPL />
+      </>
+    );
   }
 }

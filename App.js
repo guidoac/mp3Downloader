@@ -1,9 +1,8 @@
-import React from 'react';
-import { StyleSheet, View, TextInput, Button } from 'react-native';
+import React, { Component } from 'react';
 import NavBarContainer from './src/componentes/navbar';
-import Container from './src/componentes/container'
+import {Container} from './src/componentes/container';
 
-export default class App extends React.Component{
+export default class App extends Component{
   render() {
     return (
       <Container>
