@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 import React from 'react';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const NavBar = styled.View`
   background-color: #dbdbdb;
