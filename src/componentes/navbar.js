@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 import React from 'react';
-import icons from 'react-native-vector-icons';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const NavBar = styled.View`
   background-color: #dbdbdb;
@@ -54,7 +54,12 @@ export default class NavBarContainer extends React.Component {
           placeholder="Digite a URL aqui"
           placeholderTextColor="black"
           />
-          <ButtonPesquisar></ButtonPesquisar>
+          <ButtonPesquisar><Icon
+            name="search"
+            size={18}
+            color="#999"
+          />
+          </ButtonPesquisar>
         </NavBar>
         <ButtonDownloadPL />
       </>
