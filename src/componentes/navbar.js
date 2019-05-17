@@ -12,7 +12,7 @@ const LogoYT = styled.Image`
 `
 const NavBar = styled.View`
   background-color: #dbdbdb;
-  height: 40px;
+  height: 30px;
   flex-direction: row;
   flex-wrap:wrap;
   position:relative;
