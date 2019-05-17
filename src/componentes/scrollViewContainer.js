@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import styled from 'styled-components/native';
 import React from 'react';
 import DropDownVideo from './dropdownVideo';
@@ -33,40 +32,4 @@ export default class ScrollView extends React.Component{
             </>
         )
     }
-=======
-import styled from 'styled-components/native';
-import React from 'react';
-import DropDownVideo from './dropdownVideo';
-import ItemLista from './itemLista'
-
-const ScrollViewContainer = styled.ScrollView`
-    background-color: #dbdbdb;
-    position:relative;
-`
-
-export default class ScrollView extends React.Component{
-    render(){
-        return(
-            <>
-                <ScrollViewContainer>
-                    <DropDownVideo />
-                    <ItemLista />
-                    <ItemLista />
-                    <ItemLista />
-                    <ItemLista />
-                    <ItemLista />
-                    <ItemLista />
-                    <ItemLista />
-                    <ItemLista />
-                    <ItemLista />
-                    <ItemLista />
-                    <ItemLista />
-                    <ItemLista />
-                    <ItemLista />
-                    <ItemLista />
-                </ScrollViewContainer>
-            </>
-        )
-    }
->>>>>>> 16a0137447555c83a158a8207505f350122a3d30
 }
