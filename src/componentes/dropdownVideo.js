@@ -1,27 +1,29 @@
 import styled from 'styled-components/native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { Animated } from 'react-native';
 
-const ButtonDropdown = styled.TouchableOpacity`
+const ButtonDropdown = styled(Animated.View)`
     height: 25px;
-    background-color: #486642;
-    width: 100%;
+    background-color: transparent;
     position: relative;
     align-items: center;
     justify-content: center;
+    border-radius:3px;
+    margin-left: 5px;
+    margin-right: 5px;
 `
 
 export default class DropDownVideo extends React.Component {
-  render() {
-    return (
-        <>
+
+    render() {
+        return (
             <ButtonDropdown>
-                <Icon 
+                <Icon
                     name="arrow-expand-down"
-                    style={{color: '#c9c9c9', fontSize: 18,}}
+                    style={{ color: 'black', fontSize: 18, }}
                 />
             </ButtonDropdown>
-        </>
-    );
-  }
+        );
+    }
 }

@@ -55,10 +55,6 @@ buck-out/
 # Bundle artifact
 *.jsbundle
 
-<<<<<<< HEAD
-=======
-__tests__/
->>>>>>> 16a0137447555c83a158a8207505f350122a3d30
 android/
 ios/
 node_modules/
