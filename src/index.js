@@ -8,7 +8,7 @@ export default class App extends Component{
       return (
         <>
           <Container>
-            <NavBarContainer />
+            <NavBarContainer  />
             <ScrollView />
           </Container>
         </>
