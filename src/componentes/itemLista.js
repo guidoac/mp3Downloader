@@ -52,5 +52,3 @@ export default class ItemLista extends React.Component{
         )
     }
 }
-
-// ${StyleSheet.hairlineWidth}

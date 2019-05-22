@@ -1,7 +1,13 @@
 import styled from 'styled-components/native';
-import React from 'react';
+import React, { Component } from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import IconComm from 'react-native-vector-icons/MaterialCommunityIcons' 
+import IconComm from 'react-native-vector-icons/MaterialCommunityIcons' ;
+import api from '../servicos/api';
+
+const Header = styled.View`
+  border-bottom-width: 0.5;
+  border-bottom-color: #5c895d;
+`
 
 const LogoYT = styled.Image`
   height:40px;
@@ -11,7 +17,7 @@ const LogoYT = styled.Image`
   align-self:center;
 `
 const NavBar = styled.View`
-  background-color: #dbdbdb;
+  background-color: transparent;
   height: 40px;
   flex-direction: row;
   flex-wrap:wrap;
@@ -19,18 +25,19 @@ const NavBar = styled.View`
 `
 
 const InputURL = styled.TextInput`
+  border: 1px solid #79c66b;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
   background-color: #DADADA;
   width: 75%;
   margin: 0px 0px 0px 5px;
-  border: 1px solid #79c66b;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  
 `
 
 const ButtonPesquisar = styled.TouchableOpacity`
   background-color: #79c66b;
-  border-top-right-radius: 5px; 
-  border-bottom-right-radius: 5px;
+  border-top-right-radius: 15px; 
+  border-bottom-right-radius: 15px;
   flex: 1;
   margin-right: 5px;
   align-items: center;
@@ -44,19 +51,30 @@ const ButtonDownloadPL = styled.TouchableOpacity`
   align-items: center;
   justify-content: center;
   position:relative;
-  margin: 5px;
-  border-radius:5px;
-  
+  margin: 5px 5px 3px 5px;
+  border-radius: 15px;  
 `
 const TextoDownloadPL = styled.Text`
   font-size: 18px;
   padding-left: 10px;
 `
 
-export default class NavBarContainer extends React.Component {
+export default class NavBarContainer extends Component {
+ 
+  state = {
+    videosBusca: []
+  }
+
+  pesquisarPL = async () => {
+    const response = await api.get("/pesquisar?playlistID=PL9tY0BWXOZFvdeHbEJr7Wiztcue35IStT");
+    this.setState({
+      videosBusca: response.data,
+    })
+  }
+  
   render() {
     return (
-      <>
+      <Header>
         <LogoYT
           source={require("../recursos/logoyt.png")}
         />
@@ -65,7 +83,7 @@ export default class NavBarContainer extends React.Component {
           placeholder="digite a URL aqui"
           placeholderTextColor="black"
           />
-          <ButtonPesquisar>
+          <ButtonPesquisar onPress={ this.pesquisarPL }>
             <Icon 
             name="search"
             style={{fontSize:35}}
@@ -80,8 +98,8 @@ export default class NavBarContainer extends React.Component {
             <TextoDownloadPL>
               BAIXAR PLAYLIST
             </TextoDownloadPL>
-          </ButtonDownloadPL>
-      </>
+        </ButtonDownloadPL>
+      </Header>
     );
   }
 }
