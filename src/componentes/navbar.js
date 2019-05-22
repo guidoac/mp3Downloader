@@ -44,7 +44,8 @@ const ButtonDownloadPL = styled.TouchableOpacity`
   align-items: center;
   justify-content: center;
   position:relative;
-  margin: 5px 0px 1px 0px;
+  margin: 5px;
+  border-radius:5px;
   
 `
 const TextoDownloadPL = styled.Text`

@@ -28,6 +28,12 @@ export default class ScrollView extends React.Component{
                     <ItemLista />
                     <ItemLista />
                     <ItemLista />
+                    <ItemLista />
+                    <ItemLista />
+                    <ItemLista />
+                    <ItemLista />
+                    <ItemLista />
+                    <ItemLista />
                 </ScrollViewContainer>
             </>
         )
