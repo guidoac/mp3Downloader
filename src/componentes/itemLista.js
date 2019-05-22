@@ -4,7 +4,7 @@ import React from 'react';
 const Item = styled.View`
     height: 80px;
     flex-direction: row;
-    margin: 5px;
+    margin: 2.5px 5px;
     background-color: #e8e8e8;
 `
 const Thumb = styled.Image`
