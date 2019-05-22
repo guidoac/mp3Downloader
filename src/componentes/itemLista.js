@@ -39,11 +39,11 @@ export default class ItemLista extends React.Component{
             <>
                 <Item>
                     <Thumb
-                    source={{uri:"https://img.youtube.com/vi/hHW1oY26kxQ/maxresdefault.jpg"}}
+                    source={{uri: this.props.linkThumb}}
                     style={{aspectRatio:1.3,}}
                     />
                     <DetalhesVideo>
-                        <TituloVideo>Titulo do video aqui</TituloVideo>
+                        <TituloVideo>{ this.props.videoTitle }</TituloVideo>
                         <ButtonBaixarVideo>
                         </ButtonBaixarVideo>
                     </DetalhesVideo>

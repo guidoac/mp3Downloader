@@ -10,24 +10,16 @@ const ScrollViewContainer = styled.ScrollView`
 
 export default class ScrollView extends React.Component{
     render(){
+        console.log(this.props.listaVideos)
         return(
             <>
                 <ScrollViewContainer>
                     <DropDownVideo />
-                    <ItemLista />
-                    <ItemLista />
-                    <ItemLista />
-                    <ItemLista />
-                    <ItemLista />
-                    <ItemLista />
-                    <ItemLista />
-                    <ItemLista />
-                    <ItemLista />
-                    <ItemLista />
-                    <ItemLista />
-                    <ItemLista />
-                    <ItemLista />
-                    <ItemLista />
+                    { this.props.listaVideos.map( video => {
+                        return(
+                            <ItemLista key={ video.id } linkThumb={video.urlthumb} videoTitle={ video.name } linkVideo={ video.url } />
+                        ) 
+                    })}
                 </ScrollViewContainer>
             </>
         )

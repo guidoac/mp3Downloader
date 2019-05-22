@@ -2,7 +2,12 @@ import styled from 'styled-components/native';
 import React, { Component } from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import IconComm from 'react-native-vector-icons/MaterialCommunityIcons' ;
-import api from '../servicos/api';
+import { URL, URLSearchParams } from 'whatwg-url';
+import { Buffer } from 'buffer';
+
+global.Buffer = Buffer;
+global.URL = URL;
+global.URLSearchParams = URLSearchParams;
 
 const Header = styled.View`
   border-bottom-width: 0.5;
@@ -60,18 +65,23 @@ const TextoDownloadPL = styled.Text`
 `
 
 export default class NavBarContainer extends Component {
- 
-  state = {
-    videosBusca: []
-  }
-
-  pesquisarPL = async () => {
-    const response = await api.get("/pesquisar?playlistID=PL9tY0BWXOZFvdeHbEJr7Wiztcue35IStT");
-    this.setState({
-      videosBusca: response.data,
-    })
+  constructor(){
+    super();
+    this.inputPlaylist = ''
   }
   
+  clicouPesq(){
+    this.props.pesqPlaylist(this.inputPlaylist)
+  }
+
+  inseriuURL(e){
+    const formatInput = e.nativeEvent.text.substring(e.nativeEvent.text.indexOf('https'),)
+    const url = new URL(formatInput)
+    const idPlaylist = url.searchParams.get('list')
+    
+    this.inputPlaylist = idPlaylist
+  }
+
   render() {
     return (
       <Header>
@@ -79,11 +89,12 @@ export default class NavBarContainer extends Component {
           source={require("../recursos/logoyt.png")}
         />
         <NavBar>
-          <InputURL 
+          <InputURL
           placeholder="digite a URL aqui"
           placeholderTextColor="black"
+          onChange={ this.inseriuURL.bind(this) }
           />
-          <ButtonPesquisar onPress={ this.pesquisarPL }>
+          <ButtonPesquisar onPress={ this.clicouPesq.bind(this) }>
             <Icon 
             name="search"
             style={{fontSize:35}}
