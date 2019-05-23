@@ -19,7 +19,7 @@ const LogoYT = styled.Image`
   width: 30%;
   margin: 5px;
   position: relative;
-  align-self:center;
+  align-self: center;
 `
 const NavBar = styled.View`
   background-color: transparent;
@@ -36,17 +36,19 @@ const InputURL = styled.TextInput`
   background-color: #DADADA;
   width: 75%;
   margin: 0px 0px 0px 5px;
-  
 `
 
 const ButtonPesquisar = styled.TouchableOpacity`
-  background-color: #79c66b;
+  border-width: 1px;
+  border-left-width: 0px;
+  border-color: #79c66b;
   border-top-right-radius: 15px; 
   border-bottom-right-radius: 15px;
   flex: 1;
   margin-right: 5px;
   align-items: center;
   justify-content: center;
+  background-color: #DADADA;
 `
 
 const ButtonDownloadPL = styled.TouchableOpacity`
@@ -67,19 +69,14 @@ const TextoDownloadPL = styled.Text`
 export default class NavBarContainer extends Component {
   constructor(){
     super();
-    this.inputPlaylist = ''
   }
   
   clicouPesq(){
-    this.props.pesqPlaylist(this.inputPlaylist)
+    this.props.pesqPlaylist()
   }
 
   inseriuURL(e){
-    const formatInput = e.nativeEvent.text.substring(e.nativeEvent.text.indexOf('https'),)
-    const url = new URL(formatInput)
-    const idPlaylist = url.searchParams.get('list')
-    
-    this.inputPlaylist = idPlaylist
+    this.props.inseriuURL(e)
   }
 
   render() {
@@ -93,11 +90,12 @@ export default class NavBarContainer extends Component {
           placeholder="digite a URL aqui"
           placeholderTextColor="black"
           onChange={ this.inseriuURL.bind(this) }
+          selectTextOnFocus={ true }
           />
           <ButtonPesquisar onPress={ this.clicouPesq.bind(this) }>
             <Icon 
             name="search"
-            style={{fontSize:35}}
+            style={{fontSize:35, color: '#46723d'}}
             />
           </ButtonPesquisar>
         </NavBar>

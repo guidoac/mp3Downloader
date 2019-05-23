@@ -13,8 +13,8 @@ export default class ScrollView extends React.Component{
         console.log(this.props.listaVideos)
         return(
             <>
+                <DropDownVideo />
                 <ScrollViewContainer>
-                    <DropDownVideo />
                     { this.props.listaVideos.map( video => {
                         return(
                             <ItemLista key={ video.id } linkThumb={video.urlthumb} videoTitle={ video.name } linkVideo={ video.url } />
