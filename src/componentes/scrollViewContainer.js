@@ -1,27 +1,18 @@
-import styled from 'styled-components/native';
+import { ScrollViewContainer } from './Styles';
 import React from 'react';
 import DropDownVideo from './dropdownVideo';
 import ItemLista from './itemLista'
 
-const ScrollViewContainer = styled.ScrollView`
-    background-color: #dbdbdb;
-    position:relative;
-`
-
-export default class ScrollView extends React.Component{
-    render(){
+export default class ScrollView extends React.Component {
+    render() {
         console.log(this.props.listaVideos)
-        return(
-            <>
-                <DropDownVideo />
-                <ScrollViewContainer>
-                    { this.props.listaVideos.map( video => {
-                        return(
-                            <ItemLista key={ video.id } linkThumb={video.urlthumb} videoTitle={ video.name } linkVideo={ video.url } />
-                        ) 
-                    })}
-                </ScrollViewContainer>
-            </>
+        return (
+            <ScrollViewContainer
+                ListHeaderComponent={<DropDownVideo/>}
+                data={this.props.listaVideos}
+                renderItem={({ item }) => <ItemLista key={item.id} linkThumb={item.urlthumb} videoTitle={item.name} linkVideo={item.url} />}
+                keyExtractor={(item, index) => item.id}
+            />
         )
     }
 }

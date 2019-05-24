@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { StatusBar } from 'react-native'
 import NavBarContainer from './componentes/navbar';
-import Container from './componentes/container';
-import ScrollView from './componentes/scrollViewContainer'
+import ScrollViewContainer from './componentes/scrollViewContainer'
 import api from './servicos/api';
+import LinearGradient from 'react-native-linear-gradient'
 
 export default class App extends Component{
   constructor(){
@@ -30,11 +31,14 @@ export default class App extends Component{
   render(){
       return (
         <>
-          <Container>
+          <StatusBar backgroundColor='#bcbcbc' barStyle="dark-content"/>
+          <LinearGradient colors={['#cccccc','#cccccc', '#969696']} style={{ flex: 1 }}>
             <NavBarContainer pesqPlaylist={ this.pesqPlaylist.bind(this) } inseriuURL={ this.inseriuURL.bind(this) }/>
-            <ScrollView listaVideos={this.state.itensPesq}/>
-          </Container>
+            <ScrollViewContainer listaVideos={this.state.itensPesq}/>
+          </LinearGradient>
         </>
       );
   }
 };
+
+// opções cor linear gradient ['#61ce61', '#2f912f']
