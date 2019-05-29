@@ -1,6 +1,6 @@
 import { Header, LogoYT, NavBar, InputURL, ButtonPesquisar, ButtonDownloadPL, TextoDownloadPL} from './Styles';
 import React, { Component } from 'react';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import Icon from 'react-native-vector-icons/Feather';
 import IconComm from 'react-native-vector-icons/MaterialCommunityIcons' ;
 import { URL, URLSearchParams } from 'whatwg-url';
 import { Buffer } from 'buffer';
@@ -38,17 +38,17 @@ export default class NavBarContainer extends Component {
           <ButtonPesquisar onPress={ this.clicouPesq.bind(this) }>
             <Icon 
             name="search"
-            style={{fontSize:35, color: '#46723d'}}
-            />
+            style={{fontSize:30, color: '#009200'}}
+            /> 
           </ButtonPesquisar>
         </NavBar>
         <ButtonDownloadPL>
             <IconComm 
                 name="download-multiple"
-                style={{fontSize:25}}
+                style={{fontSize:25, color:'#009200'}}
             />
             <TextoDownloadPL>
-              BAIXAR PLAYLIST
+              baixar playlist
             </TextoDownloadPL>
         </ButtonDownloadPL>
       </Header>

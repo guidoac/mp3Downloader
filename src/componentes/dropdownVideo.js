@@ -1,6 +1,6 @@
 import { ButtonDropdown } from './Styles';
 import React from 'react';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon from 'react-native-vector-icons/Entypo';
 import { PanResponder } from 'react-native'
 
 export default class DropDownVideo extends React.Component {
@@ -22,7 +22,7 @@ export default class DropDownVideo extends React.Component {
         return (
             <ButtonDropdown style={{height: this.state.height}} {...this._panResponder.panHandlers}>
                 <Icon
-                    name="arrow-expand-down"
+                    name="chevron-thin-down"
                     style={{ color: 'black', fontSize: 18, }}
                 />
             </ButtonDropdown>

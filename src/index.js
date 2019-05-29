@@ -31,8 +31,8 @@ export default class App extends Component{
   render(){
       return (
         <>
-          <StatusBar backgroundColor='#bcbcbc' barStyle="dark-content"/>
-          <LinearGradient colors={['#cccccc','#cccccc', '#969696']} style={{ flex: 1 }}>
+          <StatusBar backgroundColor='rgba(230,230,230, 0.4)' barStyle="dark-content"/>
+          <LinearGradient colors={['rgba(230,230,230, 0.4)', 'rgba(133,133,133,0.82)']} style={{ flex: 1 }}>
             <NavBarContainer pesqPlaylist={ this.pesqPlaylist.bind(this) } inseriuURL={ this.inseriuURL.bind(this) }/>
             <ScrollViewContainer listaVideos={this.state.itensPesq}/>
           </LinearGradient>

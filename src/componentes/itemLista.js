@@ -1,22 +1,24 @@
-import { Item, Thumb, DetalhesVideo, TituloVideo, ButtonBaixarVideo } from './Styles';
+import { Item, Thumb, DetalhesVideo, TituloVideo, ButtonBaixarVideo, ThumbContainer } from './Styles';
 import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
-export default class ItemLista extends React.Component{
-    render(){
-        return(
+export default class ItemLista extends React.Component {
+    render() {
+        return (
             <>
                 <Item>
-                    <Thumb
-                    source={{uri: this.props.linkThumb}}
-                    style={{aspectRatio:1.3,}}
-                    />
+                    <ThumbContainer>
+                        <Thumb
+                            source={{ uri: this.props.linkThumb }}
+                            style={{ aspectRatio: 1.3, }}
+                        />
+                    </ThumbContainer>
                     <DetalhesVideo>
-                        <TituloVideo>{ this.props.videoTitle }</TituloVideo>
+                        <TituloVideo>{this.props.videoTitle}</TituloVideo>
                         <ButtonBaixarVideo>
-                            <Icon 
+                            <Icon
                                 name="download"
-                                style={{fontSize:25, color: '#46723d'}}
+                                style={{ fontSize: 25, color: '#009200' }}
                             />
                         </ButtonBaixarVideo>
                     </DetalhesVideo>
